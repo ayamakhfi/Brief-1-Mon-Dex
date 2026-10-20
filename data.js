@@ -74,7 +74,7 @@ const creatures = [
 
 
  {
-  id: "#0058",                                  
+  id: "#058",                                  
   name: "Caninos",                             
   type: "Feu",                                  
   level: "Base",                                
@@ -86,7 +86,7 @@ const creatures = [
 
 
  {
-  id: "#0059",                                  
+  id: "#059",                                  
   name: "Arcanin",                             
   type: "Feu",                                  
   level: "Niveau 1",                                
@@ -276,6 +276,102 @@ const creatures = [
   description: "Les feuilles qui poussent sur ses bras sont assez tranchantes pour abattre des arbres épais en les découpant proprement. C’est sans égal au combat dans la jungle."       
  }
 
+// glace
 
+ {
+  id: "#361",                                  
+  name: "Stalgamin",                             
+  type: "Glace",                                  
+  level: "Base",                                
+  stats: { hp: 50, attack: 50, defence: 50 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/361.png",         
+  description: " On dit que plusieurs Snorunt se rassemblent sous des feuilles géantes et vivent ensemble en harmonie."       
+ }
 
+ {
+  id: "#613",                                  
+  name: "Polarhume",                             
+  type: "Glace",                                  
+  level: "Base",                                
+  stats: { hp: 55, attack: 70, defence: 40 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/613.png",         
+  description: "Beaucoup de ces espèces peuvent être trouvées le long des côtes dans les régions froides. Si un Cubchoo manque de morve pendante, il y a une chance qu’il soit malade."       
+ }
+ {
+  id: "#362",                                  
+  name: "Oniglali",                             
+  type: "Glace",                                  
+  level: "Niveau 1",                                
+  stats: { hp: 80, attack: 80, defence: 80 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/362.png",         
+  description: "Sa proie est instantanément gelée par l’air froid qu’elle expire de sa bouche énorme. Pendant qu’ils sont dans cet état gelé, il les engloutit. "       
+ }
+ {
+  id: "#378",                                  
+  name: "Regice",                             
+  type: "Glace",                                  
+  level: "Base",                                
+  stats: { hp: 80, attack: 50, defence: 100 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/378.png",         
+  description: " Avec de l’air froid pouvant atteindre des températures aussi basses que −328 degrés Fahrenheit, Regice gèle instantanément toute créature qui s’en approche."       
+ }
+ {
+  id: "#471",                                  
+  name: "Givrali",                             
+  type: "Glace",                                  
+  level: "Niveau 1",                                
+  stats: { hp: 65, attack: 60, defence: 110 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/471.png",         
+  description: "Il peut contrôler sa température corporelle à volonté, ce qui lui permet de geler l’humidité dans l’atmosphère et de créer des tourbillons de poussière de d.iamant "       
+ }
+ {
+  id: "#614",                                  
+  name: "Polagriffe",                             
+  type: "Glace",                                  
+  level: "Niveau 1",                                
+  stats: { hp: 95, attack: 130, defence: 80 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/614.png",         
+  description: "Une fois qu’il capture ses proies, il leur insuffle de l’air froid pour les congeler et les préserver. "       
+ }
+ {
+  id: "#975",                                  
+  name: "Balbalèze ",                             
+  type: "Glace",                                  
+  level: "Niveau 1",                                
+  stats: { hp: 170, attack: 113, defence: 65 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/975.png",         
+  description: " Il protège son corps avec des muscles puissants et une épaisse couche de graisse sous sa peau."       
+ }
+
+ //Ténébres
+
+  {
+  id: "#197",                                  
+  name: "Noctali ",                             
+  type: "Ténébres",                                  
+  level: "Niveau 1",                                
+  stats: { hp: 95, attack: 65, defence: 110 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/197.png",         
+  description: "Lorsqu’il est exposé à l’aura de la lune, les anneaux sur son corps brillent faiblement et il acquiert un pouvoir mystérieux."       
+ }
+
+ {
+  id: "#261",                                  
+  name: "Medhyèna",                             
+  type: "Ténébres",                                  
+  level: "Base",                                
+  stats: { hp: 95, attack: 65, defence: 110 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/261.png",         
+  description: "Il montre ses grandes crocs et aboie vigoureusement pour tenter d’intimider les opposants, mais c’est en fait une manifestation de sa nature lâche."       
+ }
+ {
+  id: "#262",                                  
+  name: "Grahyèna",                             
+  type: "Ténébres",                                  
+  level: "Niveau 1",                                
+  stats: { hp: 70, attack: 90, defence: 70 },  
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/262.png",         
+  description: "Ils suivent fidèlement les ordres de leur chef. La proie ciblée par Mightyena n’est jamais autorisée à échapper au travail d’équipe exceptionnel de ses poursuivants."       
+ }
+ 
 ];
