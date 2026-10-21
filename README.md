@@ -42,3 +42,7 @@ Puis committez `dist/output.css` : GitHub Pages ne lance pas Tailwind pour vous.
 - **Sources des images :** [liens]
 - **Tests des expressions régulières :** [collez ici vos tests console : 2 valeurs valides et 2 invalides par expression]
 - **Bonus réalisés :** [liste] 
+
+## Source 
+[https://www.pokebip.com/] (tout les information de créatures)
+[https://www.pokemon.com/us] (les images et les descriptions)
