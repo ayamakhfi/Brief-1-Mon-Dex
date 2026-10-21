@@ -23,3 +23,8 @@
     @apply h-12 rounded-xl border-2 border-line bg-white px-3 text-base outline-none;
   }
 }
+img{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+}
