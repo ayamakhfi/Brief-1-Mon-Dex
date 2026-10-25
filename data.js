@@ -16,14 +16,14 @@
 //
 // Pensez à citer la source de vos images dans le README.
 
-const creatures = [
+const créatures = [
 {
   id: "#004",                                  
   name: "Salamèche",                             
   type: "Feu",                                  
   level: "Base",                                
   stats: { hp: 39, attack: 52, defence: 43 },  
-  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/005.png",         
+  image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/004.png",         
   description: "La flamme sur sa queue montre la force de sa force vitale."       
  },
 
