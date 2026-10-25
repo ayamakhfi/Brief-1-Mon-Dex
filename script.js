@@ -103,7 +103,7 @@ inputId.addEventListener("input",function(){
 
 const inputNom=form.querySelector('[name="name"]');
 const messageErreurNom= inputNom.parentElement.querySelector(".error-message")
-const regexNom=/^[a-z]+(?:-[a-z]+)*$/;
+const regexNom=/^[A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ0-9 .'-]{1,29}$/;
 
  inputNom.addEventListener("input",function(){
     const mot=inputNom.value.toLowerCase();
@@ -165,7 +165,7 @@ const regexNom=/^[a-z]+(?:-[a-z]+)*$/;
  const inputStatic=form.querySelectorAll('[name="stat1"],[name="stat2"],[name="stat3"]');
  inputStatic.forEach(function(input){
   const messageErreurStatic= input.parentElement.querySelector(".error-message");
-  const regexStatic=/^(0|[1-9]\d{0,2})$/;
+  const regexStatic=/^\d{1,3}$/;
 
   
   input.addEventListener("input",function(){
@@ -196,7 +196,7 @@ const regexNom=/^[a-z]+(?:-[a-z]+)*$/;
 
 const inputImg=form.querySelector('[name="image"]');
 const messageErreurImg=inputImg.parentElement.querySelector(".error-message");
-const regexImg=/^https?:\/\/.+\.png$/i;
+const regexImg=/^https:\/\/\S+\.(png|jpe?g|webp|gif)$/i;
 
 inputImg.addEventListener("input",function(){
     const img=inputImg.value.trim();
@@ -221,4 +221,38 @@ inputImg.addEventListener("input",function(){
         messageErreurImg.classList.add("text-green-500");
     }
  });
+
+ const inputMessage =form.querySelector('[name="description"]');
+ const messageErreurMessage=inputMessage.parentElement.querySelector(".error-message");
+ const regexMessage=/^[\s\S]{10,200}$/;
+
+ inputMessage.addEventListener("input",function(){
+   const message=inputMessage.value.trim();
+inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500", "text-green-500");
+   messageErreurMessage.classList.remove("text-red-500","text-green-500");
+
+   if(message===""){
+      messageErreurMessage.textContent="";
+   }
+
+   else if(!regexMessage.test(message)){
+      inputMessage.classList.add("text-red-500");
+      inputMessage.classList.add("border-red-500");
+      messageErreurMessage.textContent="message invalid";
+      messageErreurMessage.classList.add("text-red-500");
+   }
+
+    else {
+      inputMessage.classList.add("text-green-500");
+      inputMessage.classList.add("border-green-500");
+      messageErreurMessage.textContent="message valid";
+      messageErreurMessage.classList.add("text-green-500");
+   }
+ });
+
+ form.addEventListener('submit',(e)=>{
+   e.preventDefault();
+
+ });
+
 
