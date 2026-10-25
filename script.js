@@ -26,7 +26,11 @@ const grid=document.getElementById("grid");
           <p class="text-sm text-muted">${créature.level} · Total ${totale}</p>
           <button type="button" class="btn-outline border-[#C60000] text-[#C60000] 
           focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Ajouter à l'équipe</button>`;
-      grid.appendChild(carte);
+
+          carte.addEventListener("click",()=>{
+            panneaudétail(créature);
+          });
+           grid.appendChild(carte);
       });
    }
 
@@ -46,6 +50,36 @@ const grid=document.getElementById("grid");
 // Un clic sur une carte ouvre le panneau de détail :
 // image, description, et statistiques affichées en barres.
 // -------------------------------------------------------------
+
+function panneaudétail(créature){
+
+   document. getElementById("detail").classList.remove("hidden");
+   document.getElementById("détail-id").textContent=`${créature.id}.Détail`;
+   document.getElementById("détail-img").src=créature.image;
+   document.getElementById("détail-img").alt=créature.name;
+   document.getElementById("détail-name").textContent=créature.name;
+   document.getElementById("détail-type").textContent=créature.type;
+   document.getElementById("détail-descreption").textContent=créature.description;
+
+   const stats=[
+      { nom:"hp", valeur:créature.stats.hp},
+      {nom:"attack",valeur:créature.stats.attack},
+      {nom:"defence", valeur:créature.stats.defence}
+   ];
+
+   stats.forEach((stat)=>{
+      document.getElementById(`détail-${stat.nom}`).textContent=stat.valeur;
+
+      document.getElementById(`level-${stat.nom}`).style.width=`${Math.min(stat.valeur,100)}%`;
+   });
+   
+
+   }
+
+   
+
+
+
 
 
 // -------------------------------------------------------------
