@@ -154,7 +154,7 @@ const créatures = [
  {
   id: "#025",                                  
   name: "Pikachu",                             
-  type: "Electrik",                                  
+  type: "lectrik",                                  
   level: "base",                                
   stats: { hp: 35, attack: 55, defence: 40 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png",         
@@ -164,7 +164,7 @@ const créatures = [
   {
   id: "#026",                                  
   name: "Raichu",                             
-  type: "Electrik",                                  
+  type: "Électrik",                                  
   level: "Niveau 1",                                
   stats: { hp: 60, attack: 90, defence: 95 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/026.png",         
@@ -174,7 +174,7 @@ const créatures = [
  {
   id: "#100",                                  
   name: "Voltorbe",                             
-  type: "Electrik",                                  
+  type: "Électrik",                                  
   level: "Base",                                
   stats: { hp: 40, attack: 30, defence: 50 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/100.png",         
@@ -184,7 +184,7 @@ const créatures = [
  {
   id: "#101",                                  
   name: "Électrode",                             
-  type: "Electrik",                                  
+  type: "Électrik",                                  
   level: "Niveau 1",                                
   stats: { hp: 60, attack: 50, defence: 70 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/101.png",         
@@ -194,7 +194,7 @@ const créatures = [
  {
   id: "#135",                                  
   name: "Akwakwak",                             
-  type: "Electrik",                                  
+  type: "Électrik",                                  
   level: "Base",                                
   stats: { hp: 65, attack: 65, defence:60 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/135.png",         
@@ -204,7 +204,7 @@ const créatures = [
  {
   id: "#179",                                  
   name: "Wattouat ",                             
-  type: "Electrik",                                  
+  type: "Électrik",                                  
   level: "Base",                                
   stats: { hp: 55, attack: 40, defence: 40 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/179.png",         
@@ -213,7 +213,7 @@ const créatures = [
  {
   id: "#180",                                  
   name: "Lainergie",                             
-  type: "Electrik",                                  
+  type: "Électrik",                                  
   level: "Niveau 1",                                
   stats: { hp: 70, attack: 55, defence: 55 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/180.png",         
@@ -223,7 +223,7 @@ const créatures = [
  {
   id: "#181",                                  
   name: "Pharamp",                             
-  type: "Electrik",                                  
+  type: "Électrik",                                  
   level: "Niveau 2",                                
   stats: { hp: 90, attack: 75, defence: 85 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/181.png",         
@@ -235,7 +235,7 @@ const créatures = [
 {
   id: "#420",                                  
   name: "Ceribou",                             
-  type: "plante",                                  
+  type: "Plante",                                  
   level: "Base",                                
   stats: { hp: 45, attack: 35, defence: 45 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/420.png",         
@@ -244,7 +244,7 @@ const créatures = [
  {
   id: "#421",                                  
   name: "Ceriflor",                             
-  type: "plante",                                  
+  type: "Plante",                                  
   level: "Niveau 1",                                
   stats: { hp: 70, attack: 60, defence:70},  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/421.png",         
@@ -253,7 +253,7 @@ const créatures = [
  {
   id: "#252",                                  
   name: "Arcko",                             
-  type: "plante",                                  
+  type: "Plante",                                  
   level: "Base",                                
   stats: { hp: 40, attack: 45, defence: 35 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/252.png",         
@@ -262,7 +262,7 @@ const créatures = [
  {
   id: "#253",                                  
   name: "Massko",                             
-  type: "plante",                                  
+  type: "Plante",                                  
   level: "Niveau 1",                                
   stats: { hp: 50, attack: 65, defence: 45 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/253.png",         
@@ -271,7 +271,7 @@ const créatures = [
  {
   id: "#285",                                  
   name: "Balignon",                             
-  type: "plante",                                  
+  type: "Plante",                                  
   level: "Niveau 2",                                
   stats: { hp: 60, attack: 40, defence: 60 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/254.png",         
@@ -350,7 +350,7 @@ const créatures = [
   {
   id: "#197",                                  
   name: "Noctali ",                             
-  type: "Ténébres",                                  
+  type: "Ténèbres",                                  
   level: "Niveau 1",                                
   stats: { hp: 95, attack: 65, defence: 110 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/197.png",         
@@ -360,7 +360,7 @@ const créatures = [
  {
   id: "#261",                                  
   name: "Medhyèna",                             
-  type: "Ténébres",                                  
+  type: "Ténèbres",                                  
   level: "Base",                                
   stats: { hp: 95, attack: 65, defence: 110 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/261.png",         
@@ -369,7 +369,7 @@ const créatures = [
  {
   id: "#262",                                  
   name: "Grahyèna",                             
-  type: "Ténébres",                                  
+  type: "Ténèbres",                                  
   level: "Niveau 1",                                
   stats: { hp: 70, attack: 90, defence: 70 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/262.png",         
