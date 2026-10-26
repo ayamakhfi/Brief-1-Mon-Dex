@@ -88,6 +88,7 @@ function panneaudétail(créature){
 // (sans tenir compte des majuscules).
 // -------------------------------------------------------------
  function recherchecréature(créature){
+  
    const recherche=document.getElementById("search");
    recherche.addEventListener("input",()=>{
       const text=recherche.value.toLowerCase();
@@ -109,6 +110,31 @@ function panneaudétail(créature){
 // La recherche et le filtre fonctionnent ENSEMBLE.
 // -------------------------------------------------------------
 
+ function filtre(créatures){
+const filter=document.getElementById(id="filters")
+const buttons= filter.querySelectorAll(".chip");
+buttons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+   
+     const result=[];
+     const filtretype= button.textContent;
+   
+   for(let i=0;i<créatures.length;i++){
+
+        if( filtretype===créatures[i].type){
+         result.push(créatures[i]);
+      }} 
+
+      if(filtretype==="Tous"){
+       console.log(affichercartes(créatures));}
+      else{console.log(affichercartes(result));}
+
+    });
+});
+}
+   
+ filtre(créatures);
 
 // -------------------------------------------------------------
 // 5. CRÉER UNE CRÉATURE
