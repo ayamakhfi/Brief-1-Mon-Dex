@@ -87,7 +87,20 @@ function panneaudétail(créature){
 // La liste se met à jour pendant la saisie d'un nom
 // (sans tenir compte des majuscules).
 // -------------------------------------------------------------
+ function recherchecréature(créature){
+   const recherche=document.getElementById("search");
+   recherche.addEventListener("input",()=>{
+      const text=recherche.value.toLowerCase();
+      const Result=[];
+      for(let i=0;i<créatures.length;i++){
 
+     const nom=créatures[i].name.toLocaleLowerCase();
+      if(text=== nom){
+       Result.push(créatures[i]);
+      }} affichercartes(Result);
+   });
+ }
+ recherchecréature();
 
 // -------------------------------------------------------------
 // 4. FILTRE
