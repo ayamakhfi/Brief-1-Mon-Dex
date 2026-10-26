@@ -87,6 +87,7 @@ function panneaudétail(créature){
 // La liste se met à jour pendant la saisie d'un nom
 // (sans tenir compte des majuscules).
 // -------------------------------------------------------------
+
  function recherchecréature(créature){
   
    const recherche=document.getElementById("search");
@@ -136,6 +137,9 @@ button.addEventListener("click",()=>{
    
  filtre(créatures);
 
+
+
+
 // -------------------------------------------------------------
 // 5. CRÉER UNE CRÉATURE
 // Validez chaque champ du formulaire avec une expression régulière
@@ -144,11 +148,15 @@ button.addEventListener("click",()=>{
 // -------------------------------------------------------------
 
 
+
+
+
 // -------------------------------------------------------------
 // 6. MON ÉQUIPE
 // Boutons « Ajouter à l'équipe » et « Retirer », gérés avec UN SEUL
 // écouteur sur la grille et UN SEUL sur l'équipe (délégation).
 // -------------------------------------------------------------
+
 
 
 // -------------------------------------------------------------
@@ -179,6 +187,12 @@ inputId.addEventListener("input",function(){
     inputId.classList.remove("border-red-500","border-green-500" ,"text-red-500", "text-green-500");
     messageErreurId.classList.remove("text-red-500","text-green-500");
 
+    let exist=false;
+    for(let i=0;i<créatures.length;i++){
+    if (valeur===créatures[i].id){
+      exist=true;
+}}
+
     if (valeur===""){
         messageErreurId.textContent="";
     }
@@ -189,6 +203,12 @@ inputId.addEventListener("input",function(){
        messageErreurId.classList.add("text-red-500");
         
 
+    }
+
+    else if(exist=true){
+     inputId.classList.add("border-red-500");
+     messageErreurId.textContent="cette id est déjà identifié.";
+    messageErreurId.classList.add("text-red-500"); 
     }
 
     else{
@@ -352,9 +372,37 @@ inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500
    }
  });
 
+ const inputtype=form.querySelector('[name="type"]');
+ const messageErreurtype=inputtype.parentElement.querySelector(".error-message ");
+ 
+
  form.addEventListener('submit',(e)=>{
    e.preventDefault();
+    const nouvellecarte={ id:inputId.value,
+                     name: inputNom.value,
+                     type:inputtype.value,
+                     level:inputNiveau.value,
+                     stats:{hp:Number(form.querySelector('[name="stat1"]').value)
+                        ,attack: Number(form.querySelector('[name="stat2"]').value)
+                        ,defence:Number(form.querySelector('[name="stat3"]').value )
+                     },
+                     image:inputImg.value,
+                     description:inputMessage.value}
+    
+     créatures.push(nouvellecarte);
+  affichercartes(créatures) });
 
- });
+  const effacer=form.querySelector(".reset");
+  form.addEventListener("reset",(e)=>{
+   const inputdelete=form.querySelectorAll("input");
+   const messagedelete=form.querySelectorAll(".error-message");
+   inputdelete.forEach(input=>{
+   input.classList.remove("border-red-500","border-green-500" ,"text-red-500", "text-green-500");});
+
+
+   messagedelete.forEach(message=>{
+   message.classList.remove("text-red-500", "text-green-500");});
+  
+  });
 
 
