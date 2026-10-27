@@ -154,7 +154,7 @@ const créatures = [
  {
   id: "#025",                                  
   name: "Pikachu",                             
-  type: "lectrik",                                  
+  type: "Électrik",                                  
   level: "base",                                
   stats: { hp: 35, attack: 55, defence: 40 },  
   image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png",         
