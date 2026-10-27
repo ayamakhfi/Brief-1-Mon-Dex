@@ -189,11 +189,15 @@ const count=document.getElementById("mon-équipe");
 
 
 
-         //     const buttons=document.querySelector(`[data-action="ajouter"]`);
-         //     buttons.forEach((button)=>{
-         //       if(groupecartes.length===6){
-         //     button.classList.add("bg-[#E5E7EB]","text-[#D5D9E1]");}
-         // });
+          const buttons=document.querySelectorAll(`[data-action="ajouter"]`);
+             buttons.forEach((button)=>{
+               if(groupecartes.length===6){
+             button.classList.add("bg-[#E5E7EB]","text-[#D5D9E1]");
+                button.disabled=true}
+
+                else {button.classList.remove("bg-[#E5E7EB]","text-[#D5D9E1]");
+                button.disabled=false;}
+          });
 
       carte.className="flex flex-col gap-3 rounded-card bg-white p-3 pb-4  ";
 
