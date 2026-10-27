@@ -73,6 +73,11 @@ function panneaudétail(créature){
 
       document.getElementById(`level-${stat.nom}`).style.width=`${Math.min(stat.valeur,100)}%`;
    });
+    const detail=document.getElementById("detail");
+   const fermer=document.getElementById("Fermer");
+   fermer.addEventListener("click",()=>{
+     detail.classList.add("hidden");
+    });
    
 
    }
@@ -89,18 +94,14 @@ function panneaudétail(créature){
 // (sans tenir compte des majuscules).
 // -------------------------------------------------------------
 
- function recherchecréature(créature){
+ function recherchecréature(){
   
    const recherche=document.getElementById("search");
    recherche.addEventListener("input",()=>{
       const text=recherche.value.toLowerCase();
-      const Result=[];
-      for(let i=0;i<créatures.length;i++){
+      const Result=créatures.filter((créature)=> créature.name.toLocaleLowerCase().includes(text))
 
-     const nom=créatures[i].name.toLocaleLowerCase();
-      if(text=== nom){
-       Result.push(créatures[i]);
-      }} affichercartes(Result);
+      affichercartes(Result);
    });
  }
  recherchecréature();
@@ -169,7 +170,16 @@ const count=document.getElementById("mon-équipe");
      groupe.innerHTML="";
      for(let i=0;i<6;i++){
       const carte=document.createElement("article");
-      count.textContent=`${groupecartes.length}/6`;
+      // count.textContent=`${groupecartes.length}/6`;
+      //    if(groupecartes.length===6){
+      //        const buttons=document.querySelector(`[data-action="ajouter"]`);
+      //         forEach(button)
+      //        button.classList.add("bg-[#E5E7EB]","text-[#D5D9E1]");
+      //    }
+
+
+
+
       carte.className="flex flex-col gap-3 rounded-card bg-white p-3 pb-4  ";
 
         if(groupecartes[i]){
