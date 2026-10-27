@@ -8,6 +8,12 @@
 const grid=document.getElementById("grid");
  function affichercartes(liste){
    grid.innerHTML="";
+
+   const headercount=document.getElementById("creature-count");
+   headercount.textContent=`${créatures.length}`;
+
+
+
    liste.forEach((créature)=>{
       const totale= créature.stats.hp+créature.stats.attack+créature.stats.defence;
 
@@ -44,7 +50,7 @@ const grid=document.getElementById("grid");
 // Supprimez les cartes écrites à la main dans index.html et
 // construisez la grille à partir du tableau `creatures`.
 // -------------------------------------------------------------
-
+   
 
 // -------------------------------------------------------------
 // 2. DÉTAIL
@@ -169,16 +175,19 @@ const count=document.getElementById("mon-équipe");
   
      groupe.innerHTML="";
      for(let i=0;i<6;i++){
+       
       const carte=document.createElement("article");
-      // count.textContent=`${groupecartes.length}/6`;
-      //    if(groupecartes.length===6){
-      //        const buttons=document.querySelector(`[data-action="ajouter"]`);
-      //         forEach(button)
-      //        button.classList.add("bg-[#E5E7EB]","text-[#D5D9E1]");
-      //    }
+      count.textContent=`${groupecartes.length}/6`;
+      const teamcount=document.getElementById("team-count");
+        teamcount.textContent=`${groupecartes.length}`;
 
 
 
+         //     const buttons=document.querySelector(`[data-action="ajouter"]`);
+         //     buttons.forEach((button)=>{
+         //       if(groupecartes.length===6){
+         //     button.classList.add("bg-[#E5E7EB]","text-[#D5D9E1]");}
+         // });
 
       carte.className="flex flex-col gap-3 rounded-card bg-white p-3 pb-4  ";
 
@@ -202,17 +211,8 @@ const count=document.getElementById("mon-équipe");
           focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Retirer de l'équipe</button>`;
          }
 
-          else{ 
-               carte.classList.add(" flex","flex-col", "bg-slate-400", "rounded-card", "outline-2", "outline-dashed" ,"h-[150px]", "w-full", "min-w-0", "justify-center items-center text-center ");
-
-               carte.innerHTML=`
-         
-          <span class=" justify-center items-center judtify-center h-9 w-9 rounded-full bg-slate-200 text-3xl text-slate-800 text-center">+</span>
-          
-          <h3 class="text-sm text-muted font-semibold  ">ajouter un Pokémon</h3>
-          <p class="text-[12px] text-muted font-light  ">Vous pouvez ajouter jusqu'à 6 Pokémon</p>`;}
-
           groupe.appendChild(carte);}
+          
           }
      
 
@@ -271,7 +271,7 @@ const count=document.getElementById("mon-équipe");
 // -------------------------------------------------------------
 // BONUS : LocalStorage, Fetch API, tri, comparaison
 // -------------------------------------------------------------
-
+function nouvellecréature(){
                //la validation 
 const form = document.getElementById("creature-form");
 
@@ -472,7 +472,7 @@ inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500
       messageErreurMessage.textContent="message valid";
       messageErreurMessage.classList.add("text-green-500");
    }
- });
+ });} nouvellecréature()
 
  const inputtype=form.querySelector('[name="type"]');
  const messageErreurtype=inputtype.parentElement.querySelector(".error-message ");
@@ -492,7 +492,9 @@ inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500
                      description:inputMessage.value}
     
      créatures.push(nouvellecarte);
-  affichercartes(créatures) });
+  affichercartes(créatures) 
+nouvellecréature()
+});
 
   const effacer=form.querySelector(".reset");
   form.addEventListener("reset",(e)=>{
@@ -504,6 +506,8 @@ inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500
 
    messagedelete.forEach(message=>{
    message.classList.remove("text-red-500", "text-green-500");});
+
+   nouvellecréature();
   
   });
 
