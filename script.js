@@ -307,7 +307,7 @@ inputId.addEventListener("input",function(){
 
     }
 
-    else if(exist=true){
+    else if(exist===true){
      inputId.classList.add("border-red-500");
      messageErreurId.textContent="cette id est déjà identifié.";
     messageErreurId.classList.add("text-red-500"); 
@@ -349,8 +349,8 @@ const regexNom=/^[A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ0-9 .'-]{1,29}$/;
         inputNom.classList.add("text-green-500");
         inputNom.classList.add("border-green-500");
         messageErreurNom.textContent="Nom valide";
-        messageErreurNom.classList.add("text-green-500");
-    }
+        messageErreurNom.classList.add("text-green-500");}
+    
  });
 
 
@@ -419,7 +419,7 @@ const regexNom=/^[A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ0-9 .'-]{1,29}$/;
 
 const inputImg=form.querySelector('[name="image"]');
 const messageErreurImg=inputImg.parentElement.querySelector(".error-message");
-const regexImg=/^https:\/\/\S+\.(png|jpe?g|webp|gif)$/i;
+const regexImg=/^https?:\/\/\S+\.(png|jpe?g|webp|gif)$/i;
 
 inputImg.addEventListener("input",function(){
     const img=inputImg.value.trim();
@@ -472,10 +472,10 @@ inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500
       messageErreurMessage.textContent="message valid";
       messageErreurMessage.classList.add("text-green-500");
    }
- });} nouvellecréature()
+ });
 
  const inputtype=form.querySelector('[name="type"]');
- const messageErreurtype=inputtype.parentElement.querySelector(".error-message ");
+ const messageErreurtype=inputtype.parentElement.querySelector(".error-message");
  
 
  form.addEventListener('submit',(e)=>{
@@ -493,7 +493,7 @@ inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500
     
      créatures.push(nouvellecarte);
   affichercartes(créatures) 
-nouvellecréature()
+
 });
 
   const effacer=form.querySelector(".reset");
@@ -507,8 +507,8 @@ nouvellecréature()
    messagedelete.forEach(message=>{
    message.classList.remove("text-red-500", "text-green-500");});
 
-   nouvellecréature();
+   
   
   });
 
-
+}nouvellecréature();
