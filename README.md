@@ -27,21 +27,21 @@ Puis committez `dist/output.css` : GitHub Pages ne lance pas Tailwind pour vous.
 
 | Fichier | Rôle |
 | --- | --- |
-| `index.html` | La page Dex, statique, avec 6 cartes écrites à la main |
+| `index.html` | La page Dex, statique, avec 35 cartes écrites à la main |
 | `tailwind.config.js` | Le thème neutre à remplacer par celui de votre univers |
 | `src/input.css` | Les directives Tailwind et quelques classes de composants |
 | `dist/output.css` | Le CSS généré par Tailwind (ne pas modifier à la main) |
-| `data.js` | Le tableau `creatures`, à remplir avec au moins 12 créatures |
+| `data.js` | Le tableau `creatures`|
 | `script.js` | Votre JavaScript, avec la liste des fonctionnalités à coder |
 | `design/` | La maquette de la version finale |
 
 ## À compléter par vous
 
-- **Univers choisi :** [Pokémon / Digimon / Yu-Gi-Oh!]
-- **Lien GitHub Pages :** [lien]
-- **Sources des images :** [liens]
-- **Tests des expressions régulières :** [collez ici vos tests console : 2 valeurs valides et 2 invalides par expression]
-- **Bonus réalisés :** [liste] 
+- **Univers choisi :** [Pokémon ]
+- **Lien GitHub Pages :** [https://ayamakhfi.github.io/Brief-1-Mon-Dex/]
+
+
+
 
 ## Source 
 [https://www.pokebip.com/] (tout les information de créatures)
