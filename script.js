@@ -24,7 +24,8 @@ const grid=document.getElementById("grid");
             <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">${créature.type}</span>
           </div>
           <p class="text-sm text-muted">${créature.level} · Total ${totale}</p>
-          <button type="button" class="btn-outline border-[#C60000] text-[#C60000] 
+         
+          <button type="button" data-action="ajouter" data-id="${créature.id}" class="btn-outline border-[#C60000] text-[#C60000] 
           focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Ajouter à l'équipe</button>`;
 
           carte.addEventListener("click",()=>{
@@ -156,6 +157,97 @@ button.addEventListener("click",()=>{
 // Boutons « Ajouter à l'équipe » et « Retirer », gérés avec UN SEUL
 // écouteur sur la grille et UN SEUL sur l'équipe (délégation).
 // -------------------------------------------------------------
+
+const team=document.getElementById("team");
+const groupe=document.getElementById("groupe");
+const count=document.getElementById("mon-équipe");
+  let groupecartes=[];
+
+
+  function équipe(){
+  
+     groupe.innerHTML="";
+     for(let i=0;i<6;i++){
+      const carte=document.createElement("article");
+      count.textContent=`${groupecartes.length}/6`;
+      carte.className="flex flex-col gap-3 rounded-card bg-white p-3 pb-4  ";
+
+        if(groupecartes[i]){
+         const créature=groupecartes[i];
+         const totale=créature.stats.hp+ créature.stats.attack+ créature.stats.defence;
+
+          carte.classList.add("bg-white","border","gap-2");
+          carte.innerHTML=` <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
+                      <span class="absolute left-3 top-2 font-mono text-sm text-muted">${créature.id}</span>
+                      <img src="${créature.image}"  alt="${créature.name}"> 
+                      </div>
+
+                       <div class="flex items-center justify-between gap-2">
+            <h3 class="font-display text-xl font-semibold">${créature.name}</h3>
+            <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">${créature.type}</span>
+          </div>
+          <p class="text-sm text-muted">${créature.level} · Total ${totale}</p>
+         
+                           <button data-action="retirer" data-id="${créature.id}" type="button" class="btn-outline border-[#C60000] text-[#C60000] 
+          focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Retirer de l'équipe</button>`;
+         }
+
+          else{ 
+               carte.classList.add(" flex","flex-col", "bg-slate-400", "rounded-card", "outline-2", "outline-dashed" ,"h-[150px]", "w-full", "min-w-0", "justify-center items-center text-center ");
+
+               carte.innerHTML=`
+         
+          <span class=" justify-center items-center judtify-center h-9 w-9 rounded-full bg-slate-200 text-3xl text-slate-800 text-center">+</span>
+          
+          <h3 class="text-sm text-muted font-semibold  ">ajouter un Pokémon</h3>
+          <p class="text-[12px] text-muted font-light  ">Vous pouvez ajouter jusqu'à 6 Pokémon</p>`;}
+
+          groupe.appendChild(carte);}
+          }
+     
+
+    grid.addEventListener("click",(e)=>{
+      const button=e.target.closest('[data-action="ajouter"]');
+      if(!button)return;
+        
+        const id=button.dataset.id;
+        const créature=créatures.find((poké)=>poké.id===id);
+
+        if(!créature)return;
+
+         if(groupecartes.length>=6){
+         alert("votre équipe est complét!");
+         return;
+        }
+
+      for (let i=0;i<groupecartes.length;i++){
+         if(groupecartes[i].id===id){
+            alert("vous ne pouvez pas redoubler une carte");
+            return;
+         }}
+
+         groupecartes.push(créature);
+         
+         équipe();
+      
+    });
+      team.addEventListener("click",(e)=>{
+        const button=e.target.closest('[data-action="retirer"]');
+
+        if(!button)return;
+
+        const id=button.dataset.id;
+           groupecartes = groupecartes.filter((poké)=>poké.id!==id)
+
+         
+        équipe();
+
+      });
+
+
+      équipe();
+    
+
 
 
 
