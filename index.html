@@ -41,13 +41,13 @@
         </label>
       </div>
       <div id="filters" role="group" aria-label="Filtrer par type" class="flex h-11 flex-nowrap gap-2 overflow-x-auto ">
-          <button type="button" class="chip bg-ink text-white border-ink shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Tous</button>
-          <button type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Feu</button>
-          <button type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Eau</button>
-          <button type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Plante</button>
-          <button type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Électrik</button>
-          <button type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Glace</button>
-          <button type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Ténèbres</button>
+          <button  type="button" class="chip bg-ink text-white border-ink shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Tous</button>
+          <button  type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Feu</button>
+          <button  type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Eau</button>
+          <button  type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Plante</button>
+          <button  type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Électrik</button>
+          <button  type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Glace</button>
+          <button  type="button" class="chip shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Ténèbres</button>
       </div>
     </section>
 
@@ -67,7 +67,7 @@
       <aside class="flex lg:w-[520px] shrink-0 flex-col gap-6">
 
         <!-- ===================== PANNEAU DE DÉTAIL ===================== -->
-        <section id="detail" aria-label="Détail de la créature" class="hidden flex flex-col  gap-4 rounded-card border-2 border-ink bg-white p-6">
+        <section id="detail" aria-label="Détail de la créature" class=" flex flex-col  gap-4 rounded-card border-2 border-ink bg-white p-6 hidden">
           <div class="flex items-center justify-between">
             <span id="détail-id" class="font-mono text-sm text-muted">#004 · Détail</span>
             <button id="Fermer" type="button" aria-label="Fermer le détail" class="btn-outline w-11 px-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">✕</button>
@@ -97,73 +97,14 @@
         <section id="team" aria-label="Mon équipe" class="rounded-card bg-white p-6 ">
           <div class="flex justify-between mb-6">
           <h2 class="font-display text-2xl font-extrabold">Mon équipe</h2>
-          <span class="font-mono text-[16px] font-medium text-muted"id="mon-équipe">0/6</span>
+          <span id="mon-équipe" class="font-mono text-[16px] font-medium text-muted">0/6</span>
           </div>
           <!-- TODO (Partie 1) : terminez cette section en suivant la maquette :
                compteur x/6, 6 emplacements (vides ou remplis), message de règles. -->
              
-        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-7 lg:grid-cols-3 lg:gap-8">
-            
-         <p  class="hidden text-[16px] font-body  ">Voici les Pokémon qui composent votre équipe</p>
-        <article class=" flex flex-col bg-slate-400 rounded-card outline-2 outline-dashed h-[150px] w-full min-w-0
-        justify-center items-center text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">
-         
-          <span class=" justify-center items-center judtify-center h-9 w-9 rounded-full bg-slate-200 text-3xl text-slate-800 text-center">+</span>
-          
-          <h3 class="text-sm text-muted font-semibold  ">ajouter un Pokémon</h3>
-          <p class="text-[12px] text-muted font-light  ">Vous pouvez ajouter jusqu'à 6 Pokémon</p>
-        </article>
-
+        <div id="groupe" class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-7 lg:grid-cols-2 lg:gap-8">
+       
         
-        <article class=" flex flex-col bg-slate-400 rounded-card outline-2 outline-dashed h-[150px] w-full min-w-0
-        justify-center items-center text-center">
-         
-          <span class=" justify-center items-center judtify-center h-9 w-9 rounded-full bg-slate-200 text-3xl text-slate-800 text-center">+</span>
-          
-          <h3 class="text-sm text-muted font-semibold  ">ajouter un Pokémon</h3>
-          <p class="text-[12px] text-muted font-light  ">Vous pouvez ajouter jusqu'à 6 Pokémon</p>
-        </article>
-
-          
-        <article class=" flex flex-col bg-slate-400 rounded-card outline-2 outline-dashed h-[150px] w-full min-w-0
-        justify-center items-center text-center">
-         
-          <span class=" justify-center items-center judtify-center h-9 w-9 rounded-full bg-slate-200 text-3xl text-slate-800 text-center">+</span>
-          
-          <h3 class="text-sm text-muted font-semibold  ">ajouter un Pokémon</h3>
-          <p class="text-[12px] text-muted font-light  ">Vous pouvez ajouter jusqu'à 6 Pokémon</p>
-        </article>
-
-        <article class=" flex flex-col bg-slate-400 rounded-card outline-2 outline-dashed h-[150px] w-full min-w-0
-        justify-center items-center text-center">
-         
-          <span class=" justify-center items-center  h-9 w-9 rounded-full bg-slate-200 text-3xl text-slate-800 text-center">+</span>
-          
-          <h3 class="text-sm text-muted font-semibold  ">ajouter un Pokémon</h3>
-          <p class="text-[12px] text-muted font-light  ">Vous pouvez ajouter jusqu'à 6 Pokémon</p>
-        </article>
-
-
-        <article class=" flex flex-col bg-slate-400 rounded-card outline-2 outline-dashed h-[150px] w-full min-w-0
-        justify-center items-center text-center">
-         
-          <span class=" justify-center items-center judtify-center h-9 w-9 rounded-full bg-slate-200 text-3xl text-slate-800 text-center">+</span>
-          
-          <h3 class="text-sm text-muted font-semibold  ">ajouter un Pokémon</h3>
-          <p class="text-[12px] text-muted font-light  ">Vous pouvez ajouter jusqu'à 6 Pokémon</p>
-        </article>
-
-
-
-        <article class=" flex flex-col bg-slate-400 rounded-card outline-2 outline-dashed h-[150px] w-full min-w-0
-        justify-center items-center text-center">
-         
-          <span class=" justify-center items-center judtify-center h-9 w-9 rounded-full bg-slate-200 text-3xl text-slate-800 text-center">+</span>
-          
-          <h3 class="text-sm text-muted font-semibold  ">ajouter un Pokémon</h3>
-          <p class="text-[12px] text-muted font-light  ">Vous pouvez ajouter jusqu'à 6 Pokémon</p>
-        </article>
-
        </div>
                
         </section>
