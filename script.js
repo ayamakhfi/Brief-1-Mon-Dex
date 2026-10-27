@@ -1,9 +1,11 @@
 // =============================================================
 // script.js — Mon Dex
-// =============================================================
-// Les données viennent de data.js (la constante `creatures`).
-// Écrivez votre code ici, fonctionnalité par fonctionnalité.
-// Une carte GitHub Projects et au moins un commit par fonctionnalité.
+
+// -------------------------------------------------------------
+// 1. AFFICHAGE
+// Supprimez les cartes écrites à la main dans index.html et
+// construisez la grille à partir du tableau `creatures`.
+// -------------------------------------------------------------
 
 const grid=document.getElementById("grid");
  function affichercartes(liste){
@@ -21,17 +23,17 @@ const grid=document.getElementById("grid");
       carte.className='flex flex-col gap-3 rounded-card bg-white p-3 pb-4  hover:-translate-y-3 transition-transform duration-300 hover:shadow-lg hover:shadow-yellow-300';
 
       carte.innerHTML=` <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-                      <span class="absolute left-3 top-2 font-mono text-sm text-muted">${créature.id}</span>
-                      <img src="${créature.image}"  alt="${créature.name}"> 
-                      </div>
+                          <span class="absolute left-3 top-2 font-mono text-sm text-muted">${créature.id}</span>
+                         <img src="${créature.image}"  alt="${créature.name}"> 
+          </div>
 
                        <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">${créature.name}</h3>
-            <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">${créature.type}</span>
+                       <h3 class="font-display text-xl font-semibold">${créature.name}</h3>
+                        <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">${créature.type}</span>
           </div>
-          <p class="text-sm text-muted">${créature.level} · Total ${totale}</p>
+                     <p class="text-sm text-muted">${créature.level} · Total ${totale}</p>
          
-          <button type="button" data-action="ajouter" data-id="${créature.id}" class="btn-outline border-[#C60000] text-[#C60000] 
+                      <button type="button" data-action="ajouter" data-id="${créature.id}" class="btn-outline border-[#C60000] text-[#C60000] 
           focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Ajouter à l'équipe</button>`;
 
           carte.addEventListener("click",()=>{
@@ -44,13 +46,6 @@ const grid=document.getElementById("grid");
    affichercartes(créatures);
  
 
-
-// -------------------------------------------------------------
-// 1. AFFICHAGE
-// Supprimez les cartes écrites à la main dans index.html et
-// construisez la grille à partir du tableau `creatures`.
-// -------------------------------------------------------------
-   
 
 // -------------------------------------------------------------
 // 2. DÉTAIL
@@ -100,17 +95,17 @@ function panneaudétail(créature){
 // (sans tenir compte des majuscules).
 // -------------------------------------------------------------
 
- function recherchecréature(){
+//  function recherchecréature(){
   
-   const recherche=document.getElementById("search");
-   recherche.addEventListener("input",()=>{
-      const text=recherche.value.toLowerCase();
-      const Result=créatures.filter((créature)=> créature.name.toLocaleLowerCase().includes(text))
-
-      affichercartes(Result);
-   });
- }
- recherchecréature();
+//    const recherche=document.getElementById("search");
+//    recherche.addEventListener("input",()=>{
+//       const text=recherche.value.toLowerCase();
+//       const Result=créatures.filter((créature)=> créature.name.toLocaleLowerCase().includes(text))
+     
+//       affichercartes(Result);
+//    });
+//  }
+//  recherchecréature();
 
 // -------------------------------------------------------------
 // 4. FILTRE
@@ -119,43 +114,54 @@ function panneaudétail(créature){
 // La recherche et le filtre fonctionnent ENSEMBLE.
 // -------------------------------------------------------------
 
- function filtre(créatures){
-const filter=document.getElementById(id="filters")
-const buttons= filter.querySelectorAll(".chip");
-buttons.forEach(button=>{
+//  function filtre(créatures){
+// const filter=document.getElementById("filters")
+// const buttons= filter.querySelectorAll(".chip");
+// buttons.forEach(button=>{
 
-button.addEventListener("click",()=>{
+// button.addEventListener("click",()=>{
    
-     const result=[];
-     const filtretype= button.textContent;
+//      const result=[];
+//      const filtretype= button.textContent;
    
-   for(let i=0;i<créatures.length;i++){
+//    for(let i=0;i<créatures.length;i++){
 
-        if( filtretype===créatures[i].type){
-         result.push(créatures[i]);
-      }} 
+//         if( filtretype===créatures[i].type){
+//          result.push(créatures[i]);
+//       }} 
 
-      if(filtretype==="Tous"){
-       console.log(affichercartes(créatures));}
-      else{console.log(affichercartes(result));}
+//       if(filtretype==="Tous"){
+//        console.log(affichercartes(créatures));}
+//       else{console.log(affichercartes(result));}
 
-    });
+//     });
+// });
+// }
+   
+//  filtre(créatures);
+
+
+
+ function recherchefiltre(){
+   const rech=document.getElementById("search");
+   const filt=document.getElementById("filters");
+   const buttons=filt.querySelectorAll(".chip");
+    let filtertype="Tous";
+      function searchtype(){
+     const text=rech.value.toLowerCase();
+     
+      const Result=créatures.filter((créature)=> créature.name.toLocaleLowerCase().includes(text)&& (filtertype==="Tous"||créature.type===filtertype));
+       affichercartes(Result);}
+
+   rech.addEventListener("input", searchtype);
+
+   buttons.forEach(button=>{
+      button.addEventListener("click",()=>{
+          filtertype=button.textContent.trim();
+       searchtype();
 });
-}
-   
- filtre(créatures);
-
-
-
-
-// -------------------------------------------------------------
-// 5. CRÉER UNE CRÉATURE
-// Validez chaque champ du formulaire avec une expression régulière
-// (voir le tableau du brief). Affichez le message d'erreur sous le
-// champ, et n'ajoutez jamais une créature invalide.
-// -------------------------------------------------------------
-
-
+   });
+ }recherchefiltre();
 
 
 
@@ -199,13 +205,13 @@ const count=document.getElementById("mon-équipe");
           carte.innerHTML=` <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
                       <span class="absolute left-3 top-2 font-mono text-sm text-muted">${créature.id}</span>
                       <img src="${créature.image}"  alt="${créature.name}"> 
-                      </div>
+                </div>
 
                        <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">${créature.name}</h3>
-            <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">${créature.type}</span>
-          </div>
-          <p class="text-sm text-muted">${créature.level} · Total ${totale}</p>
+                      <h3 class="font-display text-xl font-semibold">${créature.name}</h3>
+                       <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">${créature.type}</span>
+                </div>
+                        <p class="text-sm text-muted">${créature.level} · Total ${totale}</p>
          
                            <button data-action="retirer" data-id="${créature.id}" type="button" class="btn-outline border-[#C60000] text-[#C60000] 
           focus-visible:outline-2 focus-visible:outline-offset-2 focus:outline-black">Retirer de l'équipe</button>`;
@@ -259,18 +265,14 @@ const count=document.getElementById("mon-équipe");
     
 
 
+// -------------------------------------------------------------
+// 5. CRÉER UNE CRÉATURE
+// Validez chaque champ du formulaire avec une expression régulière
+// (voir le tableau du brief). Affichez le message d'erreur sous le
+// champ, et n'ajoutez jamais une créature invalide.
+// -------------------------------------------------------------
 
 
-// -------------------------------------------------------------
-// 7. RÈGLES DE L'ÉQUIPE
-// 6 créatures au maximum, pas de doublon, un message clair quand
-// une action est refusée, et un compteur (x/6).
-// -------------------------------------------------------------
-
-
-// -------------------------------------------------------------
-// BONUS : LocalStorage, Fetch API, tri, comparaison
-// -------------------------------------------------------------
 function nouvellecréature(){
                //la validation 
 const form = document.getElementById("creature-form");
@@ -496,7 +498,7 @@ inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500
 
 });
 
-  const effacer=form.querySelector(".reset");
+  
   form.addEventListener("reset",(e)=>{
    const inputdelete=form.querySelectorAll("input");
    const messagedelete=form.querySelectorAll(".error-message");
@@ -505,7 +507,8 @@ inputMessage.classList.remove("border-red-500","border-green-500" ,"text-red-500
 
 
    messagedelete.forEach(message=>{
-   message.classList.remove("text-red-500", "text-green-500");});
+   message.classList.remove("text-red-500", "text-green-500");
+    message.textContent="";});
 
    
   
